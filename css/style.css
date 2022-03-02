@@ -1,0 +1,324 @@
+/* UNIVERSAL */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 10px;
+    font-family: 'Oswald', sans-serif;
+    color: #E50914;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes typeName {
+    50% {
+        width: 26ch;
+        opacity: 1;
+        visibility: visible;
+    }
+    to {
+        width: 26ch;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes typeAttr {
+    30% {
+        opacity: 1;
+    }
+    to {
+        width: 38ch;
+        opacity: 1;
+    }
+}
+
+@keyframes backColorChange {
+    to {
+        background-color: black;
+    }
+}
+
+@keyframes scaleTheName-R {
+    from {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(2);
+    }
+    80% {
+        transform: translate(-50%, -50%) scale(3.5) rotate(-15deg);
+    }
+    to {
+        transform: translate(1500%, -50%) scale(3.5) rotate(-15deg);
+    }
+}
+
+@keyframes scaleTheName-L {
+    from {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(2);
+    }
+    80% {
+        transform: translate(-50%, -50%) scale(3.5) rotate(15deg);
+    }
+    to {
+        transform: translate(-1500%, -50%) scale(3.5) rotate(15deg);
+    }
+}
+
+@keyframes textZoom {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+    30% {
+        transform: translate(-50%, -50%) scale(1.3);
+        opacity: 1;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 1;
+    }
+}
+
+@keyframes textShine {
+    to {
+        transform: translateX(1000%) rotate(-15deg);
+    }
+}
+
+@keyframes gifAppear {
+    to {
+        opacity: .1;
+    }
+}
+
+
+/* BODY */
+
+body {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    float: left;
+    background-color: rgb(0, 44, 17);
+    overflow: hidden;
+    animation: backColorChange 1.5s ease 3.8s forwards;
+}
+
+
+/* WRAPPERS */
+
+.wrapper,
+.reel {
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.wrapper,
+.character,
+.money_heist {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* REEL */
+
+.reel {
+    float: left;
+}
+
+.reel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(30%);
+    opacity: 0;
+    animation: gifAppear 8s linear 28s forwards;
+}
+
+.character,
+.project_name {
+    width: max-content;
+    font-size: 3.5rem;
+}
+
+
+/* PROJECT NAME */
+
+.project_name {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 0ch;
+    visibility: visible;
+    font-family: 'Oxygen Mono', monospace;
+    color: greenyellow;
+    border-right: 20px solid greenyellow;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typeName 4s steps(26) 1s forwards;
+}
+
+
+/* CHARACTER NAMES */
+
+.character {
+    font-weight: bold;
+    text-transform: uppercase;
+    transform: scale(0);
+}
+
+
+/* ANMIATIONS ON CHARACTERS */
+
+
+/* LAST CHARACTER (12) */
+
+.character:nth-child(12) {
+    animation: scaleTheName-R 2s ease 4s forwards;
+}
+
+
+/* 11th CHARACTER */
+
+.character:nth-child(11) {
+    animation: scaleTheName-L 2s ease 6s forwards;
+}
+
+
+/* 10th CHARACTER */
+
+.character:nth-child(10) {
+    animation: scaleTheName-R 2s ease 8s forwards;
+}
+
+
+/* 9th CHARACTER */
+
+.character:nth-child(9) {
+    animation: scaleTheName-L 2s ease 10s forwards;
+}
+
+
+/* 8th CHARACTER */
+
+.character:nth-child(8) {
+    animation: scaleTheName-R 2s ease 12s forwards;
+}
+
+
+/* 7th CHARACTER */
+
+.character:nth-child(7) {
+    animation: scaleTheName-L 2s ease 14s forwards;
+}
+
+
+/* 6th CHARACTER */
+
+.character:nth-child(6) {
+    animation: scaleTheName-R 2s ease 16s forwards;
+}
+
+
+/* 5th CHARACTER */
+
+.character:nth-child(5) {
+    animation: scaleTheName-L 2s ease 18s forwards;
+}
+
+
+/* 4th CHARACTER */
+
+.character:nth-child(4) {
+    animation: scaleTheName-R 2s ease 20s forwards;
+}
+
+
+/* 3rd CHARACTER */
+
+.character:nth-child(3) {
+    animation: scaleTheName-L 2s ease 22s forwards;
+}
+
+
+/* 2nd CHARACTER */
+
+.character:nth-child(2) {
+    animation: scaleTheName-R 2s ease 24s forwards;
+}
+
+
+/* 1st CHARACTER */
+
+.character:nth-child(1) {
+    animation: scaleTheName-L 2s ease 26s forwards;
+}
+
+
+/* MONEY HESIT text */
+
+.money_heist {
+    width: max-content;
+    font-size: 7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    overflow: hidden;
+    opacity: 0;
+    animation: textZoom 10s linear 28s forwards;
+}
+
+.money_heist::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15%;
+    height: 150%;
+    background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, .5), transparent);
+    transform: translateX(-100%) rotate(-15deg);
+    animation: textShine 7s linear 28.5s forwards;
+}
+
+
+/* ATTRIBUTION */
+
+.attribute {
+    position: absolute;
+    left: 0;
+    bottom: 5%;
+    width: 100%;
+}
+
+.attribute a {
+    width: 0;
+    margin: 0 auto;
+    display: block;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 1.3rem;
+    font-family: 'Oxygen Mono', monospace;
+    text-decoration: none;
+    color: white;
+    overflow: hidden;
+    opacity: 0;
+    animation: typeAttr 5s steps(38) 29s forwards;
+}
