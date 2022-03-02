@@ -323,3 +323,9 @@ body {
     opacity: 0;
     animation: typeAttr 5s steps(38) 29s forwards;
 }
+
+@media screen and (max-width:600px) {
+     :root {
+        font-size: 5px;
+    }
+}
