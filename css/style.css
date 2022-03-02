@@ -333,4 +333,10 @@ body {
             opacity: .3;
         }
     }
+    .wrapper {
+        background-color: rgba(0, 0, 0, .7);
+    }
+    .attribute a {
+        font-size: 2rem;
+    }
 }
