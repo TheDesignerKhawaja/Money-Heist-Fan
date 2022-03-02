@@ -328,4 +328,9 @@ body {
      :root {
         font-size: 5px;
     }
+    @keyframes gifAppear {
+        to {
+            opacity: .3;
+        }
+    }
 }
